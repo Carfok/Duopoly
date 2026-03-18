@@ -1,0 +1,19 @@
+<resources>
+    <color name="primary">#FF6200EE</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_container">#FFBB86FC</color>
+    <color name="on_primary_container">#FF3700B3</color>
+
+    <color name="primary_variant">#FF3700B3</color>
+    <color name="secondary_variant">#FF018786</color>
+
+    <color name="secondary">#FF03DAC6</color>
+    <color name="on_secondary">#FF000000</color>
+
+    <color name="background">#FF121212</color>
+    <color name="on_background">#FFFFFFFF</color>
+    <color name="surface">#FF121212</color>
+    <color name="on_surface">#FFFFFFFF</color>
+    <color name="error">#FFCF6679</color>
+    <color name="on_error">#FF000000</color>
+</resources>

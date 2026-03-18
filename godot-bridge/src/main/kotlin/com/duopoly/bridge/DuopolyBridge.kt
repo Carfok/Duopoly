@@ -5,11 +5,13 @@ import com.duopoly.core.domain.engine.GameEngine
 import com.duopoly.core.domain.model.AIDifficulty
 import com.duopoly.core.domain.model.GameAction
 import com.duopoly.core.domain.model.PlayerId
+import com.duopoly.core.domain.model.GameEvent
+import com.duopoly.core.domain.ports.GameEventListener
 import org.godotengine.godot.Godot
 import org.godotengine.godot.plugin.GodotPlugin
 import org.godotengine.godot.plugin.UsedByGodot
 
-class DuopolyBridge(godot: Godot) : GodotPlugin(godot) {
+class DuopolyBridge(godot: Godot) : GodotPlugin(godot), GameEventListener {
 
     override fun getPluginName() = "DuopolyBridge"
 
@@ -31,8 +33,67 @@ class DuopolyBridge(godot: Godot) : GodotPlugin(godot) {
 
     fun setGameEngine(engine: GameEngine) {
         this._gameEngine = engine
-        // Registrar listeners para emitir señales a Godot
-        // engine.registerListener(...)
+    }
+
+    override fun onGameStarted(state: com.duopoly.core.domain.model.GameState) {
+        // Notificar a Godot que el juego ha comenzado
+        emitGameEvent("{\"type\": \"game_started\"}")
+    }
+
+    override fun onEvent(event: GameEvent) {
+        when (event) {
+            is GameEvent.PlayerMoved -> {
+                emitPlayerMoved(event.playerId.value, event.toPosition)
+            }
+            is GameEvent.DiceRolled -> {
+                emitDiceRolled(event.result.die1, event.result.die2)
+            }
+            // Agregar más mapeos según sea necesario
+            else -> {
+                emitGameEvent("{\"type\": \"${event::class.simpleName}\"}")
+            }
+        }
+    }
+
+    override fun onStateChanged(
+        oldState: com.duopoly.core.domain.model.GameState,
+        newState: com.duopoly.core.domain.model.GameState,
+        action: GameAction
+    ) {
+        // Enviar actualización de balance para cada jugador
+        newState.players.forEach { player ->
+            emitBalanceChanged(player.id.value, player.balance)
+        }
+    }
+
+    override fun onGameOver(finalState: com.duopoly.core.domain.model.GameState, winnerId: PlayerId?) {
+        emitGameEvent("{\"type\": \"game_over\", \"winner\": \"${winnerId?.value}\"}")
+    }
+
+    override fun onError(message: String) {
+        emitGameEvent("{\"type\": \"error\", \"message\": \"$message\"}")
+    }
+
+    override fun onMainCreate(activity: android.app.Activity): android.view.View? {
+        // Aseguramos que el engine esté listo si el bridge se recrea
+        Log.d("DuopolyBridge", "onMainCreate called")
+        
+        // Intentar obtener el engine si aún no lo tenemos
+        // Como el bridge se carga en el contexto de Godot (donde vive MainActivity)
+        // buscamos el motor instanciado en MainActivity/Hilt.
+        try {
+            val providerClass = Class.forName("com.duopoly.app.GameEngineProvider")
+            val instanceField = providerClass.getField("instance")
+            val engine = instanceField.get(null) as? GameEngine
+            if (engine != null) {
+                setGameEngine(engine)
+                Log.d("DuopolyBridge", "Successfully retrieved GameEngine from GameEngineProvider")
+            }
+        } catch (e: Exception) {
+            Log.e("DuopolyBridge", "Could not retrieve GameEngine: ${e.message}")
+        }
+        
+        return super.onMainCreate(activity)
     }
 
     @UsedByGodot

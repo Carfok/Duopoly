@@ -23,22 +23,23 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad del motor Godot -->
+        <!-- Actividad del motor Godot (Usamos nuestra implementación concreta) -->
         <activity
-            android:name="org.godotengine.godot.Godot"
+            android:name=".DuopolyGodotActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|density|uiMode"
             android:exported="false"
             android:label="Duopoly Game View"
             android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:screenOrientation="sensorPortrait">
             <meta-data
                 android:name="org.godotengine.godot.main_pack"
                 android:value="Duopoly.pck" />
+            <meta-data
+                android:name="org.godotengine.plugin.v1.DuopolyBridge"
+                android:value="com.duopoly.bridge.DuopolyBridge" />
         </activity>
 
-        <meta-data
-            android:name="org.godotengine.godot.plugins"
-            android:value="com.duopoly.bridge.DuopolyBridge" />
     </application>
 
 </manifest>

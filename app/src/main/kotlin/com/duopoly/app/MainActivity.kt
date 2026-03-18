@@ -7,19 +7,36 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @javax.inject.Inject
+    lateinit var gameEngine: com.duopoly.core.domain.engine.GameEngine
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Iniciar directamente la actividad de Godot
-        // Los menús ahora se manejan dentro del proyecto de Godot
+        android.util.Log.d("MainActivity", "Starting MainActivity")
+        
         try {
-            val intent = Intent(this, Class.forName("org.godotengine.godot.Godot"))
+            // Verificar si nuestra clase DuopolyGodotActivity es accesible
+            Class.forName("com.duopoly.app.DuopolyGodotActivity")
+            android.util.Log.d("MainActivity", "DuopolyGodotActivity class found")
+
+            val intent = Intent(this, DuopolyGodotActivity::class.java)
+            intent.putExtra("game_engine_ready", true)
+            
+            GameEngineProvider.instance = gameEngine
+            android.util.Log.d("MainActivity", "GameEngine set in provider")
+            
             startActivity(intent)
-            finish() // Cerramos la activity de Android para que no quede debajo
+            android.util.Log.d("MainActivity", "Godot activity started")
+            
+            finish()
+        } catch (e: ClassNotFoundException) {
+            android.util.Log.e("MainActivity", "DuopolyGodotActivity not found!")
+            e.printStackTrace()
         } catch (e: Exception) {
+            android.util.Log.e("MainActivity", "Error launching Godot: ${e.message}")
             e.printStackTrace()
         }
     }
 }
-
-

@@ -28,6 +28,14 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    
+    sourceSets {
+        getByName("main") {
+            jniLibs.srcDirs("src/main/jniLibs")
+            assets.srcDirs("src/main/assets")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
@@ -54,6 +62,13 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":ai"))
+    implementation(project(":godot-bridge"))
+
+    implementation("org.godotengine:godot:4.3.0.stable")
+
+    // Material Components for themes
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")

@@ -38,23 +38,45 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad del motor Godot -->
+        <!-- Actividad del motor Godot (Usamos nuestra implementación concreta) -->
         <activity
-            android:name="org.godotengine.godot.Godot"
+            android:name="com.duopoly.app.DuopolyGodotActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|density|uiMode"
             android:exported="false"
             android:label="Duopoly Game View"
             android:launchMode="singleTask"
-            android:screenOrientation="sensorPortrait" >
+            android:screenOrientation="sensorPortrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <meta-data
                 android:name="org.godotengine.godot.main_pack"
                 android:value="Duopoly.pck" />
+            <meta-data
+                android:name="org.godotengine.plugin.v1.DuopolyBridge"
+                android:value="com.duopoly.bridge.DuopolyBridge" />
         </activity>
 
+        <!-- Records the version of the Godot library -->
         <meta-data
-            android:name="org.godotengine.godot.plugins"
-            android:value="com.duopoly.bridge.DuopolyBridge" />
+            android:name="org.godotengine.library.version"
+            android:value="4.3.0.stable" />
 
+        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+
+        <activity
+            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+            android:exported="false"
+            android:process=":phoenix"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.duopoly.app.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/godot_provider_paths" />
+        </provider>
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.duopoly.app.androidx-startup"

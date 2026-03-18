@@ -1,0 +1,11 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1773854823
+::res://scenes/::1773852087
+MainBoard.tscn::PackedScene::74173478594::1773852087::0::1::::<><>::
+::res://scripts/::1773852087
+BoardUI.gd::GDScript::-1::1773852087::0::1::::<>Node2D<>::
+GameView.gd::GDScript::-1::1773852087::0::1::::<>Node2D<>::
+MainMenu.gd::GDScript::-1::1773852087::0::1::::<>Control<>::
+NewGameSettings.gd::GDScript::-1::1773852087::0::1::::<>Control<>::
+PauseMenu.gd::GDScript::-1::1773852087::0::1::::<>Control<>::
+PlaySelectorMenu.gd::GDScript::-1::1773852087::0::1::::<>Control<>::

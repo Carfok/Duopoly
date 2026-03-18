@@ -19,6 +19,7 @@ import com.duopoly.core.domain.engine.GameEngine;
 import com.duopoly.core.domain.engine.RuleEngine;
 import com.duopoly.core.domain.ports.AIStrategy;
 import com.duopoly.core.domain.ports.DiceProvider;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.ViewModelLifecycle;
 import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
@@ -378,6 +379,7 @@ public final class DaggerDuopolyApp_HiltComponents_SingletonC {
 
     @Override
     public void injectMainActivity(MainActivity arg0) {
+      injectMainActivity2(arg0);
     }
 
     @Override
@@ -403,6 +405,12 @@ public final class DaggerDuopolyApp_HiltComponents_SingletonC {
     @Override
     public ViewComponentBuilder viewComponentBuilder() {
       return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @CanIgnoreReturnValue
+    private MainActivity injectMainActivity2(MainActivity instance) {
+      MainActivity_MembersInjector.injectGameEngine(instance, singletonCImpl.gameEngine());
+      return instance;
     }
   }
 

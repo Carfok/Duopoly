@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#FF121212</color>
+    <color name="error">#FFCF6679</color>
+    <color name="on_background">#FFFFFFFF</color>
+    <color name="on_error">#FF000000</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="on_primary_container">#FF3700B3</color>
+    <color name="on_secondary">#FF000000</color>
+    <color name="on_surface">#FFFFFFFF</color>
+    <color name="primary">#FF6200EE</color>
+    <color name="primary_container">#FFBB86FC</color>
+    <color name="primary_variant">#FF3700B3</color>
+    <color name="secondary">#FF03DAC6</color>
+    <color name="secondary_variant">#FF018786</color>
+    <color name="surface">#FF121212</color>
     <string name="app_name">Duopoly</string>
-    <style name="Theme.Duopoly" parent="android:Theme.Material.Light.NoActionBar"/>
+    <string name="godot_project_name_prefix">Duopoly</string>
+    <style name="Theme.Duopoly" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
 </resources>
