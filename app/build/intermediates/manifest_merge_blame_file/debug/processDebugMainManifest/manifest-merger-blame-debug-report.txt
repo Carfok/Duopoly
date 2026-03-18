@@ -1,0 +1,162 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.duopoly.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+12        android:name="com.duopoly.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.duopoly.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:5:5-42:19
+18        android:name="com.duopoly.app.DuopolyApp"
+18-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:6:9-35
+19        android:allowBackup="true"
+19-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:7:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.12.0] C:\Users\joset\.gradle\caches\8.13\transforms\7ff1715965aa843e9dae7be0785d0285\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+21        android:dataExtractionRules="@xml/data_extraction_rules"
+21-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:8:9-65
+22        android:debuggable="true"
+23        android:extractNativeLibs="true"
+24        android:fullBackupContent="@xml/backup_rules"
+24-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:9:9-54
+25        android:label="Duopoly"
+25-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:10:9-32
+26        android:supportsRtl="true"
+26-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:11:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.Duopoly" >
+28-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:12:9-45
+29        <activity
+29-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:15:9-24:20
+30            android:name="com.duopoly.app.MainActivity"
+30-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:16:13-41
+31            android:exported="true"
+31-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:17:13-36
+32            android:label="Duopoly"
+32-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:18:13-36
+33            android:theme="@style/Theme.Duopoly" >
+33-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:19:13-49
+34            <intent-filter>
+34-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:20:13-23:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:21:17-69
+35-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:22:17-77
+37-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:22:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <!-- Actividad del motor Godot -->
+42        <activity
+42-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:27:9-37:20
+43            android:name="org.godotengine.godot.Godot"
+43-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:28:13-55
+44            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|density|uiMode"
+44-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:29:13-121
+45            android:exported="false"
+45-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:30:13-37
+46            android:label="Duopoly Game View"
+46-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:31:13-46
+47            android:launchMode="singleTask"
+47-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:32:13-44
+48            android:screenOrientation="sensorPortrait" >
+48-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:33:13-55
+49            <meta-data
+49-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:34:13-36:47
+50                android:name="org.godotengine.godot.main_pack"
+50-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:35:17-63
+51                android:value="Duopoly.pck" />
+51-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:36:17-44
+52        </activity>
+53
+54        <meta-data
+54-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:39:9-41:64
+55            android:name="org.godotengine.godot.plugins"
+55-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:40:13-57
+56            android:value="com.duopoly.bridge.DuopolyBridge" />
+56-->C:\Users\joset\Desktop\Coding\Duopoly\app\src\main\AndroidManifest.xml:41:13-61
+57
+58        <provider
+58-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:24:9-32:20
+59            android:name="androidx.startup.InitializationProvider"
+59-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:25:13-67
+60            android:authorities="com.duopoly.app.androidx-startup"
+60-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:26:13-68
+61            android:exported="false" >
+61-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:27:13-37
+62            <meta-data
+62-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+63-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:30:17-75
+64                android:value="androidx.startup" />
+64-->[androidx.emoji2:emoji2:1.4.0] C:\Users\joset\.gradle\caches\8.13\transforms\8f7199257bd913076e25696e71c348dd\transformed\emoji2-1.4.0\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joset\.gradle\caches\8.13\transforms\98337ec5a776083905cedc7784839251\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+66-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joset\.gradle\caches\8.13\transforms\98337ec5a776083905cedc7784839251\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+67                android:value="androidx.startup" />
+67-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joset\.gradle\caches\8.13\transforms\98337ec5a776083905cedc7784839251\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+68            <meta-data
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+70                android:value="androidx.startup" />
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+71        </provider>
+72
+73        <receiver
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+74            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+75            android:directBootAware="false"
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+76            android:enabled="true"
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+77            android:exported="true"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+78            android:permission="android.permission.DUMP" >
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+80                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+81            </intent-filter>
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+83                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+86                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+89                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\joset\.gradle\caches\8.13\transforms\b702a6dca05d19a3e6e5ca06e387c97d\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+90            </intent-filter>
+91        </receiver>
+92    </application>
+93
+94</manifest>

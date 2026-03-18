@@ -1,0 +1,23 @@
+# IntelliJ / Gradle
+.gradle/
+build/
+bin/
+*/build/
+*/bin/
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Android
+local.properties
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aar
+*.ap_
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.duopoly.app-debug-44:/xml_backup_rules.xml.flat",
+        "source": "com.duopoly.app-main-46:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.duopoly.app-debug-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.duopoly.app-main-46:/xml/data_extraction_rules.xml"
+    }
+]

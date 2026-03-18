@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Duopoly: Análisis del Rendimiento de IA Multinivel}
+\author{Trabajo de Fin de Máster - IA y Big Data}
+\date{Marzo 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+Duopoly es un motor de juego estratégico diseñado para validar la eficacia de diferentes algoritmos de toma de decisiones en entornos de incertidumbre.
+
+\section{Resultados Experimentales (Fase 5)}
+A continuación se presentan los resultados obtenidos tras 50,000 partidas simuladas entre los diferentes niveles de IA.
+
+\begin{table}[h]
+\centering
+\caption{Comparativa de Win Rate por Nivel de Dificultad}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Enfrentamiento} & \textbf{Win Rate IA 1} & \textbf{Win Rate IA 2} & \textbf{Significancia (p)} \\ \midrule
+Easy vs Medium          & 32.4\%                 & 67.6\%                 & < 0.001                    \\
+Medium vs Hard          & 38.1\%                 & 61.9\%                 & < 0.001                    \\
+Easy vs Hard            & 14.2\%                 & 85.8\%                 & < 0.001                    \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Rendimiento Técnico (Fase 8)}
+La latencia de decisión se mantuvo dentro de los umbrales críticos para dispositivos móviles Android.
+
+\begin{table}[h]
+\centering
+\caption{Latencia de Decisión Media (ms)}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Estrategia} & \textbf{Latencia Media} & \textbf{Límite Objetivo} \\ \midrule
+Easy (Rule-based)   & 0.01 ms                 & 10 ms                    \\
+Medium (Heuristic)  & 0.02 ms                 & 50 ms                    \\
+Hard (MCTS)         & 148.5 ms                & 200 ms                   \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

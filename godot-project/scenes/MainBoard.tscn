@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://board123"]
+
+[node name="MainBoard" type="Node2D"]
+script = ExtResource("1_gameview")
+
+[node name="Background" type="Sprite2D" parent="."]
+# Aquí iría la textura del tablero de 24 casillas
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RollButton" type="Button" parent="UI"]
+layout_size = Vector2(100, 50)
+text = "Lanzar Dados"
+
+[node name="Player1" type="Sprite2D" parent="."]
+position = Vector2(0, 0) # Casilla 0
+
+[node name="Player2" type="Sprite2D" parent="."]
+position = Vector2(0, 0) # Casilla 0
